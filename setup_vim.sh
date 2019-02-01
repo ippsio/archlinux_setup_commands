@@ -1,5 +1,13 @@
 #!/bin/sh
 
+nvim --version
+if [ "$?" == "0" ]; then
+  echo "neovim installed."
+else
+  echo "INSTALL neovim"
+  sudo pacman -S --noconfirm neovim
+fi
+
 ctags --version
 if [ "$?" == "0" ]; then
   echo "ctag installed."

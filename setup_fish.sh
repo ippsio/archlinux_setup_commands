@@ -18,7 +18,11 @@ fish -c 'fisher add oh-my-fish/theme-bobthefish'
 # ===================
 # install powerline
 # ===================
-pip install powerline-status
+pip3 --version
+if [ "$?" != "0" ]; then
+  sudo python -m ensurepip
+fi
+sudo pip3 install powerline-status --upgrade pip
 git clone https://github.com/powerline/fonts
 cd fonts
 sh ./install.sh
